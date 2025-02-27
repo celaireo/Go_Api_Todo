@@ -2,14 +2,14 @@ package main
 
 import (
 	"net/http"
-    "strconv"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
 
 // Structure d'une tâche
 type Task struct {
-	ID   int    `json:"id"`
+	ID    int    `json:"id"`
 	Title string `json:"title"`
 }
 
@@ -17,16 +17,15 @@ type Task struct {
 var tasks []Task
 var nextID = 1
 
-
 func main() {
-    r := gin.Default()
+	r := gin.Default()
 
-    // Route GET pour récupérer toutes les tâches
-    r.GET("/tasks", func(c *gin.Context) {
-        c.JSON(http.StatusOK, gin.H{"tasks": tasks})
-    })
+	// Route GET pour récupérer toutes les tâches
+	r.GET("/tasks", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{"tasks": tasks})
+	})
 
-    // Route POST pour ajouter une nouvelle tâche
+	// Route POST pour ajouter une nouvelle tâche
 	r.POST("/tasks", func(c *gin.Context) {
 		var newTask Task
 		if err := c.ShouldBindJSON(&newTask); err != nil {
@@ -39,7 +38,7 @@ func main() {
 		c.JSON(http.StatusCreated, newTask)
 	})
 
-    // Route PUT pour modifier une tâche existante
+	// Route PUT pour modifier une tâche existante
 	r.PUT("/tasks/:id", func(c *gin.Context) {
 		id, err := strconv.Atoi(c.Param("id"))
 		if err != nil {
@@ -65,6 +64,25 @@ func main() {
 		c.JSON(http.StatusNotFound, gin.H{"error": "Tâche non trouvée"})
 	})
 
-    // Lancer le serveur sur le port 8080
-    r.Run(":8080")
+	// Route DELETE pour supprimer une tâche existante
+	r.DELETE("/tasks/:id", func(c *gin.Context) {
+		id, err := strconv.Atoi(c.Param("id"))
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "ID invalide"})
+			return
+		}
+
+		for i, task := range tasks {
+			if task.ID == id {
+				tasks = append(tasks[:i], tasks[i+1:]...)
+				c.JSON(http.StatusOK, gin.H{"message": "Tâche supprimée"})
+				return
+			}
+		}
+
+		c.JSON(http.StatusNotFound, gin.H{"error": "Tâche non trouvée"})
+	})
+
+	// Lancer le serveur sur le port 8080
+	r.Run(":8080")
 }
