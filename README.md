@@ -56,14 +56,14 @@ Le serveur tourne maintenant sur : **[http://localhost:8080](http://localhost:80
   ```json
   {
     "id": 1,
-    "title": "Faire les courses"
+    "title": "Voyage en province"
   }
   ```
 - **Exemple de réponse JSON** :
   ```json
   {
     "id": 2,
-    "title": "Apprendre Go"
+    "title": "Developpement web et mobile"
   }
   ```
 
