@@ -1,7 +1,9 @@
 # 📌 API de Gestion des Tâches en Go (Gin)
 
+## ✍️ **Auteurs**
+Ce projet a été réalisé dans le cadre du Groupe Go par :  
 👥 **Groupe 4** : 
-
+- OKA Celaire
 
 
 ---
@@ -64,7 +66,4 @@ Le serveur tourne maintenant sur : **[http://localhost:8080](http://localhost:80
 
 ---
 
-## ✍️ **Auteurs**
-Ce projet a été réalisé dans le cadre du Groupe Go par :  
-**Groupe 4**  
-- OKA Celaire
+
