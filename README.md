@@ -26,8 +26,8 @@ Cette API permet d'ajouter, récupérer et gérer des tâches en utilisant **Go*
 
 1️⃣ **Cloner le dépôt**
 ```sh
-git clone https://github.com/celaireo/Go_Project_Dico.git
-cd Go_Project_Dico
+git clone https://github.com/celaireo/Go_Api_Todo.git
+cd Go_Api_Todo
 ```
 
 2️⃣ **Installer les dépendances**
