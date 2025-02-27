@@ -4,6 +4,7 @@
 Ce projet a été réalisé dans le cadre du Groupe Go par :  
 👥 **Groupe 4** : 
 - OKA Celaire
+- Rostom MOUADDEB
 
 
 ---
