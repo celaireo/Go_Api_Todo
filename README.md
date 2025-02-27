@@ -26,8 +26,8 @@ Cette API permet d'ajouter, récupérer et gérer des tâches en utilisant **Go*
 
 1️⃣ **Cloner le dépôt**
 ```sh
-git clone https://github.com/
-cd go-todo-api
+git clone https://github.com/celaireo/Go_Project_Dico.git
+cd Go_Project_Dico
 ```
 
 2️⃣ **Installer les dépendances**
@@ -66,7 +66,5 @@ Le serveur tourne maintenant sur : **[http://localhost:8080](http://localhost:80
     "title": "Apprendre Go"
   }
   ```
-
----
 
 
